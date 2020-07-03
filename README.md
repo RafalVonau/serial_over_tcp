@@ -1,4 +1,4 @@
-# Serial port over TCP
+# ESP8266 serial port over TCP
 This project creates WiFi(TCP) to serial bridge.
 
 The test project was built on D1 mini board connected to PC computer over USB as /dev/ttyUSB0 under Linux.
