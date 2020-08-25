@@ -207,7 +207,12 @@ void setup() {
 		m_client = client;
 		client->setNoDelay(true);
 		client->onData([](void* arg, AsyncClient* client, void *data, size_t len) {m_tx_buffer->write((char *)data,len);}, NULL);
-		client->onDisconnect([](void* arg, AsyncClient* client) {if (m_client == client) m_client = nullptr;}, NULL);
+		client->onDisconnect([](void* arg, AsyncClient* client) {
+			if (m_client == client) m_client = nullptr;
+			client->close(true);
+			client->free();
+			delete client;
+		}, NULL);
 	}, NULL);
 	m_tcp->begin();
 	digitalWrite(D4, HIGH);
