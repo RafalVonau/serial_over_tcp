@@ -26,4 +26,5 @@ You can also run it from Arduino by renaming the main.cpp file to serial_over_es
 * open serial_over_tcp.ino in Arduino IDE, select proper board or [install it](https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/)
 * compile and upload to board
 
+
 Enjoy :-)
